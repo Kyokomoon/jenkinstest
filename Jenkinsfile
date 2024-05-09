@@ -5,12 +5,16 @@ pipeline {
          steps{
             echo 'hello world'
             sh "ls"
-            docker.build(name: 'testcontainer', push:true)
+            script {
+               docker.build(name: 'testcontainer', push:true)
+            }
          }
       }
       stage('docker_run'){
          steps{
-            docker.image('testcontainer').run()
+            script {
+               docker.image('testcontainer').run()
+            }
          }
       }
    }
