@@ -6,7 +6,7 @@ pipeline {
             echo 'hello world'
             sh "ls"
             script{
-               def customimage = docker.build('my-image:${env.BUILD_ID}')
+               def customimage = docker.build('my-image')
             }
          }
       }
