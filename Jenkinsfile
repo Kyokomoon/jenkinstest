@@ -5,7 +5,7 @@ pipeline {
          steps{
             echo 'hello world'
             sh "ls"
-            docker.build name: 'testcontainer', push:true
+            docker.build(name: 'testcontainer', push:true)
          }
       }
       stage('docker_run'){
