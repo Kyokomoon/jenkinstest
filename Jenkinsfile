@@ -8,8 +8,8 @@ pipeline {
             sh "cat Jenkinsfile"
             sh "docker --version"
             script{
-               
                def customimage = docker.build('my-image')
+               docker.image('my-image').run()
             }
          }
       }
