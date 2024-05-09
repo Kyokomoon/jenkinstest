@@ -11,7 +11,7 @@ pipeline {
             sh "docker remove cont"
             sh "docker run  --name cont my-image"
             sh "docker stop cont"
-            sh "docker rmi my-image"
+            sh "docker remove cont"
          }
       }
    }
