@@ -5,8 +5,12 @@ pipeline {
          steps{
             echo 'hello world'
             sh "ls"
-            sh "docker build -t testcontainer"
-            sh "docker run --name testcontainer testcontainer"
+            docker.build name: 'testcontainer', push:true
+         }
+      }
+      stage('docker_run'){
+         steps{
+            docker.image('testcontainer').run()
          }
       }
    }
