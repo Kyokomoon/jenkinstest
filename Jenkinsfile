@@ -7,9 +7,10 @@ pipeline {
             sh "ls"
             sh "cat Jenkinsfile"
             sh "docker --version"
-            script{
-               def customImage = docker.build('my-image')
-            }
+            sh "docker build -t my-image"
+            sh "docker run -d --name cont my-image"
+            sh "docker stop cont"
+            sh "docker rmi cont"
          }
       }
    }
