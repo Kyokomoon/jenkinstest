@@ -5,15 +5,15 @@ pipeline {
          steps{
             echo 'hello world'
             sh "ls"
-            script {
-               docker.build(name: 'testcontainer', push:true)
+            node{
+               def customimage = docker.build("my-image", run: false)
             }
          }
       }
       stage('docker_run'){
          steps{
-            script {
-               docker.image('testcontainer').run()
+            node {
+               docker.image('my-image').run()
             }
          }
       }
