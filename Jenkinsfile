@@ -4,7 +4,7 @@ pipeline {
       stage('My-pipeline'){
          steps{
             echo 'hello world'
-            sh "ll"
+            sh "ls"
             sh "docker build -t testcontainer"
             sh "docker run --name testcontainer testcontainer"
          }
