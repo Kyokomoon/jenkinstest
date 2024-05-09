@@ -10,7 +10,7 @@ pipeline {
             sh "docker build -t my-image ."
             sh "docker run -d --name cont my-image"
             sh "docker stop cont"
-            sh "docker rmi cont"
+            sh "docker rmi my-image"
          }
       }
    }
