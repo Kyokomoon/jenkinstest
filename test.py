@@ -6,6 +6,6 @@ def quad(num):
    itog = num * 2
    return itog
 
-m = quad(x)
+m = quad(y)
 
 print ("quad x = ", m)
