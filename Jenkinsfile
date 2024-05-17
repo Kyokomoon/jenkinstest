@@ -7,6 +7,7 @@ pipeline {
             sh "ls"
             sh "cat Jenkinsfile"
             sh "docker --version"
+            sh "docker remove cont"
             sh "docker build -t my-image ."
             
             sh "docker run  --name cont my-image"
